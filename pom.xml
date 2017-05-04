@@ -165,4 +165,21 @@
 			</plugins>
 		</pluginManagement>
 		</build>
+	
+	<distributionManagement>
+		<snapshotRepository>
+			<id>TrueNexusSnapshots</id>
+			<name>True Nexus Snapshots</name>
+			<url>
+                http://nexus-repo.vcs.true.th:8081/nexus/content/repositories/snapshots/
+            </url>
+		</snapshotRepository>
+		<repository>
+			<id>TrueNexusReleases</id>
+			<name>True Nexus Releases</name>
+			<url>
+                http://nexus-repo.vcs.true.th:8081/nexus/content/repositories/releases/
+            </url>
+		</repository>
+	</distributionManagement>
 </project>
