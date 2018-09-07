@@ -3,13 +3,13 @@ pipeline {
   stages {
     echo env.BRANCH_NAME
     stage('Build') {
-      echo "step build"
-      sh "mvn clean test"
+      echo 'step build'
+      bash 'mvn clean test'
     }
 
     stage('Install') {
-      echo "step install"
-      sh "mvn clean test"
+      echo 'step install'
+      bash 'mvn clean install'
     }
   }
 }
