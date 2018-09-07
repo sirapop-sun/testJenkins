@@ -1,5 +1,7 @@
 package KataTDD.SumString;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -27,7 +29,7 @@ public class AppTest {
   }
 
   @Test
-  public void sum_string_num1Plusum2_should_be_2() {
+  public void sum_string_num1PlusNum2_should_be_2() {
     assertSum("a", "2", "2");
   }
 
