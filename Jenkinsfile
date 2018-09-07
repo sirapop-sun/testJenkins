@@ -1,15 +1,15 @@
 pipeline {
-  agent any
-  stages {
-    echo env.BRANCH_NAME
-    stage('Build') {
-      echo "step build"
-      sh "mvn clean test"
-    }
-
-    stage('Install') {
-      echo "step install"
-      sh "mvn clean test"
-    }
-  }
+ agent {
+         docker {
+             image 'maven:3-alpine'
+             args '-v /root/.m2:/root/.m2'
+         }
+     }
+     stages {
+         stage('Build') {
+             steps {
+                 sh 'mvn clean test'
+             }
+         }
+     }
 }
