@@ -1,15 +1,14 @@
 pipeline {
-  agent any
+  agent { docker { image 'maven:3.3.3' } }
   stages {
-    bat "echo ${env.BRANCH_NAME}"
-    steps('Build') {
-      bat "echo step build"
-      bat "mvn clean test"
+    stage('Build') {
+      sh 'echo step build'
+      sh 'mvn clean test'
     }
 
-    steps('Install') {
-      bat "echo step install"
-      bat "mvn clean install"
+    stage('Install') {
+      sh 'echo step install'
+      sh 'mvn clean install'
     }
   }
 }
