@@ -3,15 +3,15 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'echo step build'
-        sh 'mvn clean test'
+        bat 'echo step build'
+        bat 'mvn clean test'
       }
     }
 
     stage('Install') {
       steps {
-        sh 'echo step install'
-        sh 'mvn clean install'
+        bat 'echo step install'
+        bat 'mvn clean install'
       }
     }
   }
