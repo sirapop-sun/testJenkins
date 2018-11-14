@@ -41,5 +41,4 @@ public class AppTest {
     float avg = app.getAverageVal(arrayInt);
     assertEquals(21.833333, avg, 0.001);
   }
-
 }
