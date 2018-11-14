@@ -20,26 +20,25 @@ public class AppTest {
 
   @Test
   public void checkArray_returnMinimumValue() {
-    assertEqualsThat(-2, app.getMinVal(arrayInt));
+    int min = app.getMinVal(arrayInt);
+    assertEquals(-2, min);
   }
 
   @Test
   public void checkArray_returnMaximumValue() {
-    assertEqualsThat(92, app.getMaxVal(arrayInt));
+    int max = app.getMaxVal(arrayInt);
+    assertEquals(92, max);
   }
 
   @Test
   public void checkArray_returnNumberOfElements() {
-    assertEqualsThat(6, app.getLength(arrayInt));
+    int length = app.getLength(arrayInt);
+    assertEquals(6, length);
   }
 
   @Test
   public void checkArray_returnAverageOfArray() {
     float avg = app.getAverageVal(arrayInt);
     assertEquals(21.833333, avg, 0.001);
-  }
-
-  private void assertEqualsThat(int expect, int actual) {
-    assertEquals(expect, actual);
   }
 }
