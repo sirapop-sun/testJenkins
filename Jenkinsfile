@@ -1,7 +1,3 @@
-properties([
-  pipelineTriggers([triggers: [[$class: "GitHubPushTrigger"]]]))
-])
-
 pipeline {
   agent any
   stages {
@@ -11,7 +7,7 @@ pipeline {
         bat "echo 'step build'"
         bat "mvn clean test"
       }
-      
+
     }
 
     stage('Install') {
