@@ -1,9 +1,11 @@
 pipeline {
   agent any
   stages {
+    steps {
+      bat "java -version"
+    }
     stage('Build') {
       steps {
-        bat "java -version"
         bat "echo 'step build'"
         bat "mvn clean test"
       }
