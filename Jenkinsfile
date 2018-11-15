@@ -4,7 +4,7 @@ pipeline {
     stage('Build') {
       steps {
         withMaven(maven: 'MAVEN 3', mavenLocalRepo: '.repository') {
-          sh "mvn clean test"
+          bat "mvn clean test"
         }
       }
     }
@@ -12,7 +12,7 @@ pipeline {
     stage('Install') {
       steps {
         withMaven(maven: 'MAVEN 3', mavenLocalRepo: '.repository') {
-          sh "mvn clean install"
+          bat "mvn clean install"
         }
       }
     }
