@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
+        bat "java -version"
         bat "echo 'step build'"
         bat "mvn clean test"
       }
