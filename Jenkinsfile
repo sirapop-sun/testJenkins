@@ -1,19 +1,23 @@
 pipeline {
-  agent { docker 'maven:3-alpine' }
+  agent any
   stages {
     stage('Build') {
       steps {
-        sh "java -version"
-        sh "mvn -version"
-        sh "echo 'step build'"
-        sh "mvn clean test"
+        bat "java -version"
+        bat "mvn -version"
+        bat "echo 'step build'"
+        withMaven(
+          maven: 'MAVEN 3',
+          mavenLocalRepo: '.repository') {
+            bat "mvn clean test"
+          }
       }
     }
 
     stage('Install') {
       steps {
-        sh "echo 'step install'"
-        sh "mvn clean install"
+        bat "echo 'step install'"
+        bat "mvn clean install"
       }
     }
   }
