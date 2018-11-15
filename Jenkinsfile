@@ -1,8 +1,10 @@
 pipeline {
   agent any
   stages {
-    steps {
-      bat "java -version"
+    stage('General') {
+      steps {
+        bat "java -version"
+      }
     }
     stage('Build') {
       steps {
