@@ -11,6 +11,7 @@ pipeline {
         bat "echo 'step build'"
         bat "mvn clean test"
       }
+      
     }
 
     stage('Install') {
