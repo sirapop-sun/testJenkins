@@ -1,6 +1,6 @@
 pipeline {
+  agent any
   withMaven(maven: 'MAVEN 3', jdk: 'JDK 8', mavenLocalRepo: '.repository') {
-    agent any
     stages {
       stage('Build') {
         steps {
